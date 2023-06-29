@@ -1,23 +1,80 @@
-// import logo from "../../assets/img/logo.jpeg";
+import logo from "../../assets/icon/logo2.svg";
+import logoFR from "../../assets/icon/language-french.svg";
+import logoEN from "../../assets/icon/language-english.svg";
 
+import "./Header.css";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 const Header = () => {
-  const { t } = useTranslation();
-  console.log(t);
-  return <h1>{t("header.about")}</h1>;
-  //   return (
-  //     <>
-  //       <nav>
-  //         {/* <div>
-  //           <img src={logo} alt="" />
-  //         </div> */}
-  //         {/* <ul> */}
-  //         <p>{i18next.t(`header.about`)}</p>
-  //         {/* </ul> */}
-  //       </nav>
-  //     </>
-  //   );
+  const { t, i18n } = useTranslation();
+  const size = useWindowSize();
+
+  const [burger, setBurger] = useState(false);
+
+  const handleBurgerClick = () => {
+    setBurger(!burger);
+    console.log("burger");
+  };
+  return (
+    <>
+      <header>
+        <div className="glass-header"></div>
+        <nav
+          className={
+            size.width < 1280
+              ? !burger
+                ? "nav"
+                : "nav-burger"
+              : "nav container"
+          }
+        >
+          <img src={logo} alt={t(`header.altLogo`)} className="nav-logo" />
+          <div className="contain-list-nav">
+            <ul
+              className={
+                size.width <= 601
+                  ? !burger
+                    ? "hidden"
+                    : "setlist-nav"
+                  : "setlist-nav"
+              }
+            >
+              <li className="list-nav">
+                <FontAwesomeIcon icon="id-card-clip" className="list-icon" />
+                <p className="text-nav">{t(`header.about`)}</p>
+              </li>
+              <li className="list-nav">
+                <FontAwesomeIcon icon="folder" className="list-icon" />
+                <p className="text-nav">{t(`header.projects`)}</p>
+              </li>
+              <li className="list-nav">
+                <FontAwesomeIcon icon="message" className="list-icon" />
+
+                <p className="text-nav">{t(`header.contact`)}</p>
+              </li>
+            </ul>
+
+            {!burger ? (
+              <FontAwesomeIcon
+                icon="burger"
+                className="burger-buttton-nav"
+                onClick={handleBurgerClick}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon="burger"
+                className="burger-buttton-nav-open"
+                onClick={handleBurgerClick}
+              />
+            )}
+          </div>
+        </nav>
+      </header>
+    </>
+  );
 };
 
 export default Header;

@@ -1,9 +1,14 @@
 {
   "translation": {
     "header": {
+      "altLogo": "Logo du développeur",
       "about": "À propos",
       "projects": "Projets",
       "contact": "Contact"
+    },
+    "footer": {
+      "madeBy": "Developpé par",
+      "with": "avec"
     }
   }
 }

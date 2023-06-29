@@ -4,6 +4,10 @@
       "about": "About",
       "projects": "Projects",
       "contact": "Contact"
+    },
+    "footer": {
+      "madeBy": "Develop by",
+      "with": "with"
     }
   }
 }

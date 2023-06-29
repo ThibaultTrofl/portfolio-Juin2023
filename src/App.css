@@ -1,42 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  --height-header: 50px;
+  --height-footer: 50px;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #ffffff,
+    #dfe2e8,
+    #bac8d0,
+    #94afb3,
+    #749690,
+    #64857a,
+    #567563,
+    #4a644d,
+    #3f5942,
+    #344e37,
+    #29432c,
+    #1e3922
+  );
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+header {
+  height: var(--height-header);
+  /* background-color: bisque; */
+  display: flex;
+  align-items: center;
+  /* padding: 0 20px; */
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+footer {
+  height: var(--height-footer);
+  /* background-color: bisque; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hidden {
+  display: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 1281px) {
+  .container {
+    width: 1280px;
+    margin: 0 auto;
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
