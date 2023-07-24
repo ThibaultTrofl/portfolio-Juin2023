@@ -24,20 +24,32 @@ body {
 
 header {
   height: var(--height-header);
-  /* background-color: bisque; */
+  position: sticky;
   display: flex;
   align-items: center;
-  /* padding: 0 20px; */
+  z-index: 10;
+}
+
+main {
+  height: calc(100vh - (var(--height-header) + var(--height-footer)));
 }
 footer {
   height: var(--height-footer);
-  /* background-color: bisque; */
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hidden {
   display: none;
+}
+
+/* Tablette */
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  body {
+    --height-header: 80px;
+    --height-footer: 80px;
+  }
 }
 
 @media screen and (min-width: 1281px) {

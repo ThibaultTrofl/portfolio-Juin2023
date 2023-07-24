@@ -1,0 +1,33 @@
+.cardcategory {
+  border: solid maroon 3px;
+  height: 100px;
+  width: 100px;
+  border-radius: 25%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 30px black;
+  background-color: azure;
+}
+
+.cardcategory:hover {
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+.cardcategory:not(:first-child) {
+  margin-left: -50px;
+}
+
+/* Tablette */
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  .cardcategory {
+    height: 150px;
+    width: 150px;
+  }
+
+  .cardcategory:not(:first-child) {
+    margin-left: -20px;
+  }
+}

@@ -9,16 +9,17 @@
   height: var(--height-header);
   width: 100vw;
   background: rgba(255, 255, 255, 0.3);
-  /* border-radius: 0 0 16px 16px; */
+  border-radius: 0 0 16px 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.4px);
   -webkit-backdrop-filter: blur(4.4px);
-  /* border: 1px solid rgba(255, 255, 255, 0.75); */
+  border: 1px solid rgba(255, 255, 255, 0.75);
   z-index: 0;
   box-shadow: -5px 10px 30px black;
 }
 
 .nav {
+  width: 100%;
   padding: 10px 20px;
   display: flex;
   flex-direction: row;
@@ -28,6 +29,9 @@
 }
 
 .nav-burger {
+  position: absolute;
+  top: 0px;
+  z-index: 10;
   height: 100vh;
   width: 100vw;
   padding-top: 10vh;
@@ -35,7 +39,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-
   align-items: center;
   gap: 20vh;
 }
