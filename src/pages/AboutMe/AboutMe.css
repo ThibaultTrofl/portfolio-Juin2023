@@ -19,11 +19,31 @@
 .aboutme-text {
   border: solid 2px blue;
   height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
 }
 
+.aboutme-descr {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aboutme-descr-line {
+}
 /* Tablette */
 @media screen and (min-width: 601px) and (max-width: 1280px) {
   .aboutme-menu {
     height: 150px;
   }
 }
+
+/* @media screen and (min-width: 1281px) {
+  .container {
+    width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+  }
+} */
