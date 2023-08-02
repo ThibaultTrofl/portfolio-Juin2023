@@ -21,7 +21,7 @@ body {
     #1e3922
   ); */
   background-color: #050404;
-  color: #c9daea;
+  color: white;
 }
 
 header {
@@ -45,6 +45,24 @@ footer {
   display: none;
 }
 
+.background-card {
+  backdrop-filter: blur(10px) saturate(0%);
+  -webkit-backdrop-filter: blur(10px) saturate(0%);
+  background-color: rgba(255, 255, 255, 0.57);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.see-more {
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+}
 /* Tablette */
 @media screen and (min-width: 601px) and (max-width: 1280px) {
   body {
