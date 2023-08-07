@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Description from "../../components/Description/Description";
 import Skills from "../../components/Skills/Skills";
+import Experiences from "../../components/Experiences/Experiences";
 
 const AboutMe = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,10 +18,7 @@ const AboutMe = () => {
           <Skills />
         </div>
         <div className="aboutme-degrees card">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum,
-          cumque! Omnis excepturi ullam deserunt molestiae aspernatur odio,
-          expedita officia tempore sed tenetur in magni repellat accusantium
-          ipsum sequi! Laudantium, possimus!
+          <Experiences />
         </div>
         <div className="aboutme-exp card">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,

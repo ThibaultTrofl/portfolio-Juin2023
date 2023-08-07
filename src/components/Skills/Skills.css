@@ -1,0 +1,47 @@
+.skill-pres {
+  border: solid 2px #000000;
+  height: calc(100% - 35px);
+  padding: 25px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-all {
+  width: 100%;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.icon-card {
+  padding: 10px;
+  width: auto;
+  /* border: solid 2px black; */
+}
+
+.icon-card:hover {
+  transform: scale(1.2);
+}
+.skill-icon {
+  height: 50px;
+  width: 100%;
+  object-fit: scale-down;
+}
+
+/* Tablette */
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  .skill-all {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Web */
+@media screen and (min-width: 1281px) {
+  .skill-all {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
