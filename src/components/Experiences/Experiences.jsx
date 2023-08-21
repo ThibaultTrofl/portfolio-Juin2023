@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 
 // Style
-// import "./Exp.css";
+import "./Experiences.css";
 
 const Exp = () => {
   const size = useWindowSize();
@@ -40,36 +40,43 @@ const Exp = () => {
       {!expIsLoading && (
         <div className="exp-pres pres">
           <div className="background-card"></div>
-          {/* <div className="exp-all">
-            {expData.map((data, index) => {
-              console.log(data);
-              if (!seeMore) {
-                console.log(index);
-                if (index <= setNumberCard) {
-                  return (
-                    <div className="icon-card">
-                      <img
-                        src={data.icon}
-                        alt={data.exp}
-                        key={index}
-                        className="exp-icon"
-                      />
+          {expData.map((data, index) => {
+            return (
+              <>
+                <article
+                  className="exp-pres-card"
+                  onClick={() => setSeeMore(!seeMore)}
+                >
+                  <div className="background-card"></div>
+                  <div className="exp-card-contain">
+                    <div className="exp-card-pres">
+                      <a href={data.link} className="exp-card-icon-link">
+                        <img
+                          src={data.logo}
+                          alt={data.company}
+                          className="exp-card-icon"
+                        />
+                      </a>
+
+                      <div className="exp-card-header">
+                        <h1>{data.jobTitle}</h1>
+                        <h2>{data.company}</h2>
+                      </div>
                     </div>
-                  );
-                } else {
-                  return;
-                }
-              } else {
-                return <div className="icon-card"></div>;
-              }
-            })}
-          </div> */}
-          {/* 
-          {expData.length > setNumberCard && (
-            <button className="see-more" onClick={() => setSeeMore(!seeMore)}>
-              {!seeMore ? "Voir plus" : "Voir moins"}
-            </button>
-          )} */}
+                    <div className="exp-card-data">
+                      <p>{data.location.city}</p>
+                      <p>startDate - </p>
+                      <p>endDate</p>
+                    </div>
+                    {seeMore &&
+                      data.mission.map((data, index) => {
+                        return <>{data}</>;
+                      })}
+                  </div>
+                </article>
+              </>
+            );
+          })}
         </div>
       )}
     </>
