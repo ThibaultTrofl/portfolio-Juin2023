@@ -3,24 +3,25 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 
 // Style
-import "./Experiences.css";
+import "./Degrees.css";
 import SetDate from "../../function/SetDate";
 
-const Exp = () => {
+const Deg = () => {
   const size = useWindowSize();
 
-  const [expIsLoading, setExpIsLoading] = useState(true);
-  const [expData, setExpData] = useState();
+  const [degIsLoading, setDegIsLoading] = useState(true);
+  const [degData, setDegData] = useState();
   const [seeMore, setSeeMore] = useState();
 
   useEffect(() => {
     const fectchData = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:3000/aboutme/experiences"
+          "http://localhost:3000/aboutme/degrees"
         );
-        setExpData(data.response);
-        setExpIsLoading(false);
+        setDegData(data.response);
+        setDegIsLoading(false);
+        console.log(data);
       } catch (error) {
         console.log(error.response);
       }
@@ -30,36 +31,35 @@ const Exp = () => {
 
   return (
     <>
-      {!expIsLoading && (
-        <div className="exp-pres pres">
+      {!degIsLoading && (
+        <div className="deg-pres pres">
           <div className="background-card"></div>
-
-          {expData.map((data, index) => {
+          {degData.map((data, index) => {
             return (
               <article
-                className="exp-pres-card"
+                className="deg-pres-card"
                 onClick={() =>
                   seeMore === index ? setSeeMore(null) : setSeeMore(index)
                 }
                 key={index}
               >
                 <div className="background-card"></div>
-                <div className="exp-card-contain">
-                  <div className="exp-card-pres">
-                    <a href={data.link} className="exp-card-icon-link">
+                <div className="deg-card-contain">
+                  <div className="deg-card-pres">
+                    <a href={data.link} className="deg-card-icon-link">
                       <img
                         src={data.logo}
-                        alt={data.company}
-                        className="exp-card-icon"
+                        alt={data.school}
+                        className="deg-card-icon"
                       />
                     </a>
 
-                    <div className="exp-card-header">
-                      <h1>{data.jobTitle}</h1>
-                      <h2>{data.company}</h2>
+                    <div className="deg-card-header">
+                      <h1>{data.degree}</h1>
+                      <h2>{data.school}</h2>
                     </div>
                   </div>
-                  <div className="exp-card-data">
+                  <div className="deg-card-data">
                     <p>{data.location.city}</p>
 
                     <p>
@@ -68,7 +68,7 @@ const Exp = () => {
                   </div>
                   {seeMore === index && (
                     <>
-                      <div className="exp-card-seemore">
+                      <div className="deg-card-seemore">
                         {data.missions.map((data, index) => {
                           return <p key={index}>{data}</p>;
                         })}
@@ -85,4 +85,4 @@ const Exp = () => {
   );
 };
 
-export default Exp;
+export default Deg;

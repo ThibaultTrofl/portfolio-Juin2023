@@ -1,15 +1,12 @@
 import "./AboutMe.css";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Description from "../../components/Description/Description";
 import Skills from "../../components/Skills/Skills";
 import Experiences from "../../components/Experiences/Experiences";
+import Degrees from "../../components/Degrees/Degrees.jsx";
+import SmallContact from "../../components/SmallContact/SmallContact.jsx";
 
 const AboutMe = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState();
-
   return (
     <main>
       <section className="aboutme-all">
@@ -17,14 +14,14 @@ const AboutMe = () => {
         <div className="aboutme-skills card">
           <Skills />
         </div>
-        <div className="aboutme-degrees card">
+        <div className="aboutme-exp card">
           <Experiences />
         </div>
-        <div className="aboutme-exp card">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
-          reprehenderit iste? Unde reiciendis, dolore voluptas id modi autem
-          quo? Odio, ipsum a. Ducimus beatae maxime nobis blanditiis rerum error
-          corrupti.
+        <div className="aboutme-degrees card">
+          <Degrees />
+        </div>
+        <div className="aboutme-contact card">
+          <SmallContact />
         </div>
       </section>
     </main>

@@ -1,0 +1,26 @@
+.pres {
+  position: relative;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  gap: 40px;
+}
+
+.pres-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  gap: 30px;
+}
+
+.smallContact-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
