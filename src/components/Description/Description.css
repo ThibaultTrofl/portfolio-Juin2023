@@ -1,13 +1,13 @@
 .pres {
   position: relative;
-  height: auto;
+  height: fit-content;
   width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px;
-  gap: 40px;
+  padding: 25px 10px 10px 10px;
+  gap: 20px;
 }
 
 .pres-all {

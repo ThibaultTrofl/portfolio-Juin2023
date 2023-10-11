@@ -1,10 +1,11 @@
 .skill-pres {
-  border: solid 2px #000000;
-  height: calc(100% - 35px);
+  /* border: solid 2px ; */
+  /* height: calc(100% - 35px); */
+  height: fit-content;
   /* padding: 25px 10px 10px 10px; */
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   justify-content: center;
   align-items: center;
 }

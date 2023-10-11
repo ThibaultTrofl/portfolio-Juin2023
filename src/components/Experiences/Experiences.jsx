@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useWindowSize } from "@uidotdev/usehooks";
+// import { useWindowSize } from "@uidotdev/usehooks";
+import Map from "../Map/Map.jsx";
 
 // Style
 import "./Experiences.css";
 import SetDate from "../../function/SetDate";
 
 const Exp = () => {
-  const size = useWindowSize();
+  // const size = useWindowSize();
 
   const [expIsLoading, setExpIsLoading] = useState(true);
   const [expData, setExpData] = useState();
@@ -31,35 +32,37 @@ const Exp = () => {
   return (
     <>
       {!expIsLoading && (
-        <div className="exp-pres pres">
+        <div className="pres">
           <div className="background-card"></div>
 
           {expData.map((data, index) => {
+            console.log(data.location.latitute);
             return (
               <article
-                className="exp-pres-card"
+                className="pres-card"
                 onClick={() =>
                   seeMore === index ? setSeeMore(null) : setSeeMore(index)
                 }
                 key={index}
               >
                 <div className="background-card"></div>
-                <div className="exp-card-contain">
-                  <div className="exp-card-pres">
+
+                <div className="card-contain">
+                  <div className="card-pres">
                     <a href={data.link} className="exp-card-icon-link">
                       <img
                         src={data.logo}
                         alt={data.company}
-                        className="exp-card-icon"
+                        className="card-icon"
                       />
                     </a>
 
-                    <div className="exp-card-header">
+                    <div className="card-header">
                       <h1>{data.jobTitle}</h1>
                       <h2>{data.company}</h2>
                     </div>
                   </div>
-                  <div className="exp-card-data">
+                  <div className="card-data">
                     <p>{data.location.city}</p>
 
                     <p>
@@ -68,11 +71,15 @@ const Exp = () => {
                   </div>
                   {seeMore === index && (
                     <>
-                      <div className="exp-card-seemore">
+                      <div className="card-seemore">
                         {data.missions.map((data, index) => {
                           return <p key={index}>{data}</p>;
                         })}
                       </div>
+                      <Map
+                        longitude={data.location.longitude}
+                        latitude={data.location.latitute}
+                      />
                     </>
                   )}
                 </div>

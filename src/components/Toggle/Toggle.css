@@ -1,0 +1,34 @@
+.toggle-container {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: none;
+  /* margin: 0 5px; */
+  position: relative;
+}
+
+.toggle-containt {
+  border-radius: 6px;
+  padding: 0 5px;
+  width: fit-content;
+}
+.flur {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  border-radius: 6px;
+  /* filter: blur(1.5rem); */
+  backdrop-filter: blur(2px) saturate(0%);
+  -webkit-backdrop-filter: blur(2px) saturate(0%);
+}
+
+.day {
+  transition: 1000ms;
+  transform: translateX(50px);
+}
+.night {
+  transition: 1000ms;
+  transform: translateX(0px);
+}

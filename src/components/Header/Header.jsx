@@ -1,6 +1,6 @@
 import logo from "../../assets/icon/logo2.svg";
-import logoFR from "../../assets/icon/language-french.svg";
-import logoEN from "../../assets/icon/language-english.svg";
+// import logoFR from "../../assets/icon/language-french.svg";
+// import logoEN from "../../assets/icon/language-english.svg";
 
 import "./Header.css";
 import { useTranslation } from "react-i18next";
@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useNavigate } from "react-router-dom";
+import Toggle from "../Toggle/Toggle";
 
 const Header = () => {
-  const { t, i18n } = useTranslation();
+  const { t /*i18n*/ } = useTranslation();
   const size = useWindowSize();
   const navigate = useNavigate();
 
@@ -36,10 +37,12 @@ const Header = () => {
             src={logo}
             alt={t(`header.altLogo`)}
             onClick={() => {
+              setBurger(false);
               navigate("/");
             }}
             className="nav-logo"
           />
+          <Toggle />
           <div className="contain-list-nav">
             <ul
               className={
@@ -53,15 +56,20 @@ const Header = () => {
               <li
                 className="list-nav"
                 onClick={() => {
+                  setBurger(false);
                   navigate("/");
                 }}
               >
-                <FontAwesomeIcon icon="id-card-clip" className="list-icon" />
+                <FontAwesomeIcon
+                  icon="id-card-clip"
+                  className="list-icon svg"
+                />
                 <p className="text-nav">{t(`header.about`)}</p>
               </li>
               <li
                 className="list-nav"
                 onClick={() => {
+                  setBurger(false);
                   navigate("/projects");
                 }}
               >
@@ -71,6 +79,7 @@ const Header = () => {
               <li
                 className="list-nav"
                 onClick={() => {
+                  setBurger(false);
                   navigate("/contact");
                 }}
               >

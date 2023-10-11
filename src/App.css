@@ -1,10 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-body {
+:root {
   --height-header: 50px;
   --height-footer: 50px;
+  --color-black: #050404;
+  --color-blueLight: #d8dbe2;
+  --color-blueMedium: #a9bcd0;
+  --color-blueGreen: #58a4b0;
+  --color-lightGrey: #e5e5e5;
+  --color-darkGrey: #595959;
+  --color-mediumGrey: #a5a5a5;
+  --color-orange: #fca311;
+  --color-darkBlue: #14213d;
+}
+
+body {
   box-sizing: border-box;
   font-family: "Roboto";
   height: 100vh;
+  color-scheme: light;
   /* background-image: linear-gradient(
     to right bottom,
     #ffffff,
@@ -20,8 +33,8 @@ body {
     #29432c,
     #1e3922
   ); */
-  background-color: #050404;
-  color: white;
+  background-color: var(--color-lightGrey);
+  color: var(--color-black);
 }
 
 header {
@@ -56,6 +69,7 @@ h2 {
   backdrop-filter: blur(10px) saturate(0%);
   -webkit-backdrop-filter: blur(10px) saturate(0%);
   background-color: rgba(255, 255, 255, 0.57);
+  /* background-color: var(--color-mediumGrey); */
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   position: absolute;
@@ -71,6 +85,53 @@ h2 {
   border: none;
   z-index: 3;
   align-self: center;
+}
+
+.card-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-pres {
+  display: flex;
+  gap: 15px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+}
+
+.card-seemore {
+  border-top: solid rgb(135, 135, 135) 1px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 10px;
+  border-bottom: solid rgb(135, 135, 135) 1px;
+}
+
+.card-contain {
+  z-index: 3;
+  position: relative;
+  padding: 25px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pres-card {
+  position: relative;
+  width: 100%;
+}
+
+.card-icon {
+  height: 50px;
+  object-fit: contain;
 }
 /* Tablette */
 @media screen and (min-width: 601px) and (max-width: 1280px) {

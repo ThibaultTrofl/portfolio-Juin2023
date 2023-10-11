@@ -1,65 +1,9 @@
-.deg-pres {
-  border: solid 2px #000000;
-  height: calc(100% - 35px);
-  padding: 25px 10px 10px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-}
-.deg-pres-card {
-  position: relative;
-  width: 100%;
-}
 .deg-card {
   z-index: 2;
-}
-
-.deg-card-contain {
-  z-index: 3;
-  position: relative;
-  padding: 25px 10px 10px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.deg-card-pres {
-  display: flex;
-  gap: 15px;
 }
 
 .deg-card-icon-link {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.deg-card-icon {
-  height: 50px;
-  object-fit: contain;
-}
-
-.deg-card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 7px;
-}
-
-.deg-card-data {
-  display: flex;
-  /* gap: 5px; */
-
-  justify-content: space-between;
-}
-
-.deg-card-seemore {
-  border-top: solid rgb(135, 135, 135) 1px;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }

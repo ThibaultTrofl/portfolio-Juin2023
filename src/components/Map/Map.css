@@ -1,0 +1,9 @@
+.map {
+  height: 150px;
+}
+.mapboxgl-canvas {
+  border-radius: 12px;
+}
+.mapboxgl-maker > svg > path {
+  fill: var(--color-darkGrey);
+}

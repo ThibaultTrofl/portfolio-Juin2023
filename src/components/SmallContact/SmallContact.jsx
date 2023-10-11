@@ -32,7 +32,7 @@ const SmallContact = () => {
             className="smallContact-line"
           >
             <img src={githubIcon} alt="GitHub Logo" className="skill-icon" />
-            CV
+            Curriculum vitae
           </a>
         </div>
       </div>
