@@ -1,0 +1,42 @@
+.filter-list {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: yellow;
+  padding: 20px;
+
+  &-element {
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      position: relative;
+      bottom: 20px;
+      background-color: green;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 2px 4px;
+    }
+    &-data {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+  &-button {
+    // justify-content: center;
+    align-self: center;
+    width: 50%;
+    background-color: green;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+}

@@ -41,7 +41,7 @@
   height: 100vh;
   width: 100vw;
   padding-top: 10vh;
-  background-color: var(--color-blueMedium);
+  // background-color: var(--color-blueMedium);
   /* color: white; */
   display: flex;
   flex-direction: column;
@@ -70,11 +70,19 @@
   display: flex;
   justify-content: center;
   text-transform: uppercase;
+
+  &--hover {
+    margin: 5px 5px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+  &--hover:hover {
+    border-bottom: solid 2px white;
+    transform: scale(1.3);
+  }
 }
-.list-nav:hover {
-  border-bottom: solid 2px white;
-  transform: scale(1.3);
-}
+
 .list-icon {
   display: none;
 }

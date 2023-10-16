@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./Toggle.css";
 
-const Toggle = () => {
-  const [day, setDay] = useState(true);
+const Toggle = ({ day, setDay }) => {
   return (
     <>
       <button
@@ -11,9 +11,14 @@ const Toggle = () => {
           setDay(!day);
         }}
       >
-        <p className="toggle-containt">Jour</p>
         <div className={day ? "flur day" : "flur night"}></div>
-        <p className="toggle-containt">Nuit</p>
+        <p className="toggle-containt">
+          <FontAwesomeIcon icon="fa-regular fa-lightbulb" className="svg" />
+        </p>
+
+        <p className="toggle-containt">
+          <FontAwesomeIcon icon="moon" className="svg" />
+        </p>
       </button>
     </>
   );

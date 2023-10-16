@@ -1,33 +1,42 @@
 .toggle-container {
-  width: 100px;
+  width: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 10px;
   border-radius: 6px;
   border: none;
-  /* margin: 0 5px; */
   position: relative;
+  margin-bottom: 3px;
 }
 
+.toggle-container:hover {
+  border-bottom: none;
+  transform: none;
+}
 .toggle-containt {
   border-radius: 6px;
   padding: 0 5px;
   width: fit-content;
 }
 .flur {
+  top: -1px;
+  left: 0px;
   position: absolute;
   height: 100%;
-  width: 45%;
+  width: 50%;
   border-radius: 6px;
-  /* filter: blur(1.5rem); */
+  border: solid 1px gray;
+  filter: blur(1px);
   backdrop-filter: blur(2px) saturate(0%);
   -webkit-backdrop-filter: blur(2px) saturate(0%);
 }
 
 .day {
   transition: 1000ms;
-  transform: translateX(50px);
+  transform: translateX(29px);
 }
+
 .night {
   transition: 1000ms;
   transform: translateX(0px);

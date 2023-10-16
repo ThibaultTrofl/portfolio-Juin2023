@@ -2,7 +2,7 @@ import logo from "../../assets/icon/logo2.svg";
 // import logoFR from "../../assets/icon/language-french.svg";
 // import logoEN from "../../assets/icon/language-english.svg";
 
-import "./Header.css";
+import "./Header.scss";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import { useNavigate } from "react-router-dom";
 import Toggle from "../Toggle/Toggle";
 
-const Header = () => {
+const Header = ({ day, setDay }) => {
   const { t /*i18n*/ } = useTranslation();
   const size = useWindowSize();
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const Header = () => {
             }}
             className="nav-logo"
           />
-          <Toggle />
+
           <div className="contain-list-nav">
             <ul
               className={
@@ -54,7 +54,7 @@ const Header = () => {
               }
             >
               <li
-                className="list-nav"
+                className="list-nav--hover"
                 onClick={() => {
                   setBurger(false);
                   navigate("/");
@@ -67,7 +67,7 @@ const Header = () => {
                 <p className="text-nav">{t(`header.about`)}</p>
               </li>
               <li
-                className="list-nav"
+                className="list-nav--hover"
                 onClick={() => {
                   setBurger(false);
                   navigate("/projects");
@@ -77,7 +77,7 @@ const Header = () => {
                 <p className="text-nav">{t(`header.projects`)}</p>
               </li>
               <li
-                className="list-nav"
+                className="list-nav--hover"
                 onClick={() => {
                   setBurger(false);
                   navigate("/contact");
@@ -86,6 +86,9 @@ const Header = () => {
                 <FontAwesomeIcon icon="message" className="list-icon" />
 
                 <p className="text-nav">{t(`header.contact`)}</p>
+              </li>
+              <li>
+                <Toggle day={day} setDay={setDay} />
               </li>
             </ul>
 
