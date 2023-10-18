@@ -4,6 +4,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 
 // Style
 import "./Skills.css";
+import SkillIcon from "../SkillIcon/SkillIcon";
 
 const Skills = () => {
   const size = useWindowSize();
@@ -45,26 +46,22 @@ const Skills = () => {
                 if (!seeMore) {
                   if (index <= setNumberCard) {
                     return (
-                      <div className="icon-card" key={index}>
-                        <img
-                          src={data.icon}
-                          alt={data.skill}
-                          className="skill-icon"
-                        />
-                      </div>
+                      <SkillIcon
+                        key={index}
+                        icon={data.icon}
+                        skill={data.skill}
+                      />
                     );
                   } else {
                     return;
                   }
                 } else {
                   return (
-                    <div className="icon-card" key={index}>
-                      <img
-                        src={data.icon}
-                        alt={data.skill}
-                        className="skill-icon"
-                      />
-                    </div>
+                    <SkillIcon
+                      key={index}
+                      icon={data.icon}
+                      skill={data.skill}
+                    />
                   );
                 }
               })}
