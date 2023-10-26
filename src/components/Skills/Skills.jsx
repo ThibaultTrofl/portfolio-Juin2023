@@ -43,6 +43,7 @@ const Skills = () => {
           <div className="skill-all">
             {!skillIsLoading &&
               skillData.map((data, index) => {
+                console.log(index);
                 if (!seeMore) {
                   if (index <= setNumberCard) {
                     return (
@@ -50,6 +51,7 @@ const Skills = () => {
                         key={index}
                         icon={data.icon}
                         skill={data.skill}
+                        utility={"aboutme"}
                       />
                     );
                   } else {
@@ -61,6 +63,7 @@ const Skills = () => {
                       key={index}
                       icon={data.icon}
                       skill={data.skill}
+                      utility={"aboutme"}
                     />
                   );
                 }

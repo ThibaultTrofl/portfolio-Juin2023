@@ -16,20 +16,6 @@
     position: inherit;
     // z-index: 2;
   }
-  &-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: green;
-    gap: 20px;
-    justify-content: space-around;
-
-    &-element {
-      background-color: rgb(128, 0, 90);
-      height: 100px;
-      width: 150px;
-      z-index: 2;
-    }
-  }
 }
 
 .filter {
@@ -77,9 +63,22 @@
     }
   }
 }
+
 /* Tablette */
-@media screen and (min-width: 601px) and (max-width: 1280px) {
+@media screen and (min-width: 601px) {
+  .projects {
+    &-header {
+      display: flex;
+
+      flex-direction: row;
+    }
+  }
   .filter {
+    width: 150px;
+    margin-left: 30px;
+    padding: 12px 30px;
+  }
+  .sort {
     width: 150px;
     margin-left: 30px;
     padding: 12px 30px;

@@ -1,0 +1,133 @@
+.projects {
+  &-card-container {
+    &-element {
+      &-photo {
+        width: -webkit-fill-available;
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 200px;
+      }
+      &-data {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-firstLine {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+        }
+        &-dateLine {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+        &-resumeLine {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &-lineTechno {
+          display: flex;
+          flex-wrap: nowrap;
+          gap: 10px;
+          align-items: center;
+          padding-top: 10px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+.iconLineTechno {
+  display: flex;
+  height: 30px;
+  object-fit: scale-down;
+  &-icon {
+    height: 30px;
+    width: 100%;
+    object-fit: scale-down;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 701px) {
+  .projects {
+    &-card-container {
+      &-element {
+        &-photo {
+          width: 100%;
+          object-fit: contain;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 400px;
+        }
+        &-data {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          &-firstLine {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+          }
+
+          &-resumeLine {
+            visibility: hidden;
+            height: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1280px) {
+  // .projects {
+  //   &-card-container {
+  //     &-element {
+  //       &-photo {
+  //         width: 100%;
+  //         object-fit: contain;
+  //         display: flex;
+  //         align-items: center;
+  //         justify-content: center;
+  //         max-width: 400px;
+  //       }
+  //       &-data {
+  //         display: flex;
+  //         flex-direction: column;
+  //         justify-content: space-around;
+  //         &-firstLine {
+  //           display: flex;
+  //           flex-direction: row;
+  //           justify-content: space-between;
+  //           align-items: center;
+  //           gap: 10px;
+  //         }
+  //         &-dateLine {
+  //           flex-direction: row;
+  //           justify-content: space-between;
+  //           align-items: center;
+  //           gap: 10px;
+  //         }
+  //         &-resumeLine {
+  //           visibility: hidden;
+  //           height: 0px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}

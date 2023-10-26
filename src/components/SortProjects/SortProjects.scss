@@ -75,3 +75,17 @@
     text-align: center;
   }
 }
+
+/* Tablette */
+@media screen and (min-width: 601px) {
+  .sort-list {
+    width: fit-content;
+  }
+  .sort-list {
+    &-element {
+      &-containerSort {
+        gap: 20px;
+      }
+    }
+  }
+}

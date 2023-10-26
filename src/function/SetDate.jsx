@@ -1,4 +1,4 @@
-const SetDate = (date) => {
+const SetDate = ({ date }) => {
   const DateFormat = new Date(Number(date));
   const longMonth = [
     "Jan",

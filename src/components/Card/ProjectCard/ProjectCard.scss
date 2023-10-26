@@ -1,0 +1,41 @@
+.projects {
+  &-card-container {
+    &-element {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-lightGrey);
+      border-radius: 10px;
+      padding: 20px;
+      z-index: 2;
+      gap: 20px;
+      width: -webkit-fill-available;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 700px) {
+  .projects {
+    &-card-container {
+      &-element {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .projects {
+    &-card-container {
+      padding: 20px;
+      display: flex;
+
+      flex-wrap: wrap;
+      gap: 20px;
+
+      &-element {
+        flex: 01;
+        padding: 20px 0px 0px 0px;
+      }
+    }
+  }
+}

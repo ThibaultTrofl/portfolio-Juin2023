@@ -4,7 +4,11 @@ import FilterProjects from "../../components/FilterProjects/FilterProjects";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import SortProjects from "../../components/SortProjects/SortProjects";
+import ProjectPart from "../../components/ProjectPart/ProjectPart";
 // import { useWindowSize } from "@uidotdev/usehooks";
+import SetTimeStamp from "./../../function/SetTimeStamp.jsx";
+import GetMonth from "../../function/getMonth";
+import GetYear from "../../function/getYear";
 
 const Projects = () => {
   const [openFilter, setOpenFilter] = useState(false);
@@ -23,14 +27,14 @@ const Projects = () => {
     startYear: 2023,
   });
   const [selectEndDate, setSelectEndDate] = useState({
-    endMonth: 9,
-    endYear: 2023,
+    endMonth: GetMonth(),
+    endYear: GetYear(),
   });
 
   useEffect(() => {
     const fectchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/projects");
+        const { data } = await axios.get("http://localhost:3000/projects/all");
         setProjectsData(data.response);
         setTechnofilter(data.selectTechno);
         setEnvirFilter(data.selectEnvir);
@@ -42,6 +46,36 @@ const Projects = () => {
     fectchData();
   }, []);
 
+  const handleSubmitForm = async () => {
+    try {
+      setProIsLoading(true);
+      const arrayTechnoToString = selectTechno.join(",");
+      const arrayEnvirToString = selectEnvir.join(",");
+      const timeStampStartDate = SetTimeStamp(
+        selectStartDate.startMonth,
+        selectStartDate.startYear
+      );
+      const timeStampEndDate = SetTimeStamp(
+        selectEndDate.endMonth,
+        selectEndDate.endYear
+      );
+      let sort = "";
+      if (sortAsc) {
+        sort = "asc";
+      } else {
+        sort = "desc";
+      }
+      const { data } = await axios.get(
+        `http://localhost:3000/projects/filter?dateMin=${timeStampStartDate}&dateMax=${timeStampEndDate}&environnement=${arrayEnvirToString}&sort=${sort}&techno=${arrayTechnoToString}
+        `
+      );
+      console.log(data);
+      setProjectsData(data.response);
+      setProIsLoading(false);
+    } catch (error) {
+      // console.log(error.response);
+    }
+  };
   return (
     <>
       {!proIsLoading ? (
@@ -79,6 +113,7 @@ const Projects = () => {
                   setSelectEndDate={setSelectEndDate}
                   selectEnvir={selectEnvir}
                   setSelectEnvir={setSelectEnvir}
+                  handleSubmitForm={handleSubmitForm}
                 />
               )}
               <div className="sort">
@@ -109,14 +144,7 @@ const Projects = () => {
 
             <div className="projects-card">
               <div className="background-card"></div>
-              <ul className="projects-card-container">
-                <li className="projects-card-container-element">test</li>
-                <li className="projects-card-container-element">test</li>
-                <li className="projects-card-container-element">test</li>
-                <li className="projects-card-container-element">test</li>
-                <li className="projects-card-container-element">test</li>
-                <li className="projects-card-container-element">test</li>
-              </ul>
+              <ProjectPart data={projectsData} />
             </div>
           </section>
         </main>

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "../DropDown.scss";
+import GetMonth from "./../../getMonth";
+import GetYear from "./../../getYear";
 
 const DropDownMonth = ({ func, dataFunc, year, utility }) => {
   const [defaultValue, setDefaultValue] = useState(Number);
@@ -10,12 +12,11 @@ const DropDownMonth = ({ func, dataFunc, year, utility }) => {
     } else if (utility === "start") {
       setDefaultValue(dataFunc.startMonth);
     }
-  }, [dataFunc, utility]);
+  }, []);
 
-  const today = new Date();
   let endDate = 11;
-  if (year === today.getFullYear()) {
-    endDate = today.getMonth();
+  if (year === GetYear()) {
+    endDate = GetMonth();
   }
 
   const month = [
@@ -40,9 +41,8 @@ const DropDownMonth = ({ func, dataFunc, year, utility }) => {
     } else if (utility === "start") {
       copyOfFunc.startMonth = Number(e);
     }
-    copyOfFunc[0] = Number(e);
-    // setDefaultValue(Number(e));
     func(copyOfFunc);
+    setDefaultValue(Number(e));
   };
 
   return (

@@ -1,5 +1,4 @@
 import ElementEnvironnement from "./ElementEnvironnement";
-import "./Environnement.scss";
 
 const Environnement = ({ envirFilter, selectEnvir, setSelectEnvir }) => {
   return (

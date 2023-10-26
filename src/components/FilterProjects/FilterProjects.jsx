@@ -16,6 +16,7 @@ const FilterProjects = ({
   setSelectEndDate,
   selectEnvir,
   setSelectEnvir,
+  handleSubmitForm,
 }) => {
   return (
     <ul className="filter-list background-card">
@@ -30,6 +31,7 @@ const FilterProjects = ({
                 skill={data.skill}
                 selectTechno={selectTechno}
                 setSelectTechno={setSelectTechno}
+                utility={"filter"}
               />
             );
           })}
@@ -88,6 +90,7 @@ const FilterProjects = ({
         className="filter-list-button"
         onClick={() => {
           setOpenFilter(false);
+          handleSubmitForm();
         }}
       >
         Rechercher

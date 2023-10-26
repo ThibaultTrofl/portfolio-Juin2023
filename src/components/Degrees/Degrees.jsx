@@ -61,7 +61,8 @@ const Deg = () => {
                     <p>{data.location.city}</p>
 
                     <p>
-                      {SetDate(data.startDate)} - {SetDate(data.endDate)}
+                      <SetDate date={data.startDate} /> -{" "}
+                      <SetDate date={data.endDate} />
                     </p>
                   </div>
                   {seeMore === index && (

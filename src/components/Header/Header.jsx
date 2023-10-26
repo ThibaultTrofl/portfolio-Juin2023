@@ -70,7 +70,7 @@ const Header = ({ day, setDay }) => {
                 className="list-nav--hover"
                 onClick={() => {
                   setBurger(false);
-                  navigate("/projects");
+                  navigate("/projects/all");
                 }}
               >
                 <FontAwesomeIcon icon="folder" className="list-icon" />
