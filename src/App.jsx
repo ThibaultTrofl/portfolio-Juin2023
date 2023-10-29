@@ -32,6 +32,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import AboutMe from "./pages/AboutMe/AboutMe.jsx";
 import Projects from "./pages/Projects/Projects.jsx";
 import SelectedProject from "./components/SelectedProject/SelectedProject";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [day, setDay] = useState(true);
@@ -43,9 +44,7 @@ function App() {
           <Route path="/" element={<AboutMe day={day} />} />
           <Route path="/projects/all" element={<Projects day={day} />} />
           <Route path="/projects/:id" element={<SelectedProject />} />
-
-          {/* <Route path="/projects" />
-          <Route path="/contact" /> */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </Router>
